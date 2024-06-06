@@ -1,28 +1,47 @@
-import { PlusCircledIcon } from '@radix-ui/react-icons';
-import { useState } from 'react';
+import { CheckIcon, PaperAirplaneIcon } from '@heroicons/react/24/outline';
 
-import { Badge } from '@/components/badge';
 import { Button } from '@/components/button';
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/dialog';
 
 function App() {
-  const [clicks, setClicks] = useState(0);
-
-  const handleClick = () => {
-    setClicks((prev) => prev + 1);
-  };
-
   return (
-    <div className="flex flex-col items-start justify-start gap-4">
-      <Button onClick={handleClick}>
-        <PlusCircledIcon />
-        Click me!
-        {clicks > 0 && <Badge>{clicks}</Badge>}
-        <PlusCircledIcon />
-      </Button>
+    <div className="flex flex-col items-start justify-start gap-4 p-4">
+      <Button>Click me!</Button>
 
-      <Button>
-        <PlusCircledIcon />
-      </Button>
+      <Dialog>
+        <DialogTrigger>
+          <Button>
+            <PaperAirplaneIcon />
+          </Button>
+        </DialogTrigger>
+
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Complete this action?</DialogTitle>
+            <DialogDescription>
+              You can’t undo this action later.
+            </DialogDescription>
+          </DialogHeader>
+
+          <DialogFooter>
+            <DialogClose>
+              <Button>Cancel</Button>
+            </DialogClose>
+            <Button>
+              Confirm <CheckIcon />
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

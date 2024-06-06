@@ -2171,6 +2171,7 @@ __metadata:
     react-router-dom: "npm:6.23.1"
     tailwind-merge: "npm:2.3.0"
     tailwindcss: "npm:3.4.4"
+    tailwindcss-animate: "npm:1.0.7"
     typescript: "npm:5.4.5"
     vite: "npm:5.2.12"
   languageName: unknown
@@ -3552,6 +3553,15 @@ __metadata:
   dependencies:
     "@babel/runtime": "npm:^7.24.1"
   checksum: 10c0/5ea308e23c3ab1cf4c3f35f0a471753f4d3ed232d63dd7c09151a74428737321902203d90e9f0cb76ea5c3978e71b0adbc503dc455e56cda967a7674ae4b94b5
+  languageName: node
+  linkType: hard
+
+"tailwindcss-animate@npm:1.0.7":
+  version: 1.0.7
+  resolution: "tailwindcss-animate@npm:1.0.7"
+  peerDependencies:
+    tailwindcss: "*"
+  checksum: 10c0/ec7dbd1631076b97d66a1fbaaa06e0725fccfa63119221e8d87a997b02dcede98ad88bb1ef6665b968f5d260fcefb10592e0299ca70208d365b37761edf5e19a
   languageName: node
   linkType: hard
 
