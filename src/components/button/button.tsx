@@ -7,13 +7,23 @@ import { buttonStyles } from './styles';
 import type { ButtonElement, ButtonProps } from './types';
 
 const Button = forwardRef<ButtonElement, ButtonProps>(
-  ({ asChild, className, size = 'md', type = 'button', ...props }, ref) => {
+  (
+    {
+      asChild,
+      className,
+      size = 'md',
+      type = 'button',
+      variant = 'solid',
+      ...props
+    },
+    ref,
+  ) => {
     const Component = asChild ? Slot : 'button';
 
     return (
       <Component
         {...props}
-        className={cn(buttonStyles({ size }), className)}
+        className={cn(buttonStyles({ size, variant }), className)}
         type={type}
         ref={ref}
       />

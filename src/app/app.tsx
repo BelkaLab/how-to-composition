@@ -34,7 +34,7 @@ function App() {
 
           <DialogFooter>
             <DialogClose>
-              <Button>Cancel</Button>
+              <Button variant="outline">Cancel</Button>
             </DialogClose>
             <Button>
               Confirm <CheckIcon />
