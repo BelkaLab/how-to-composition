@@ -31,6 +31,11 @@ type DialogHeaderProps = ComponentPropsWithoutRef<'header'> & {
   asChild?: boolean;
 };
 
+type DialogImageElement = ElementRef<'img'>;
+type DialogImageProps = ComponentPropsWithoutRef<'img'> & {
+  asChild?: boolean;
+};
+
 type DialogTitleElement = ElementRef<typeof DialogPrimitive.Title>;
 type DialogTitleProps = ComponentPropsWithoutRef<typeof DialogPrimitive.Title>;
 
@@ -39,12 +44,19 @@ type DialogDescriptionProps = ComponentPropsWithoutRef<
   typeof DialogPrimitive.Description
 >;
 
+type DialogBodyElement = ElementRef<'div'>;
+type DialogBodyProps = ComponentPropsWithoutRef<'div'> & {
+  asChild?: boolean;
+};
+
 type DialogFooterElement = ElementRef<'footer'>;
 type DialogFooterProps = ComponentPropsWithoutRef<'footer'> & {
   asChild?: boolean;
 };
 
 export type {
+  DialogBodyElement,
+  DialogBodyProps,
   DialogCloseElement,
   DialogCloseProps,
   DialogContentElement,
@@ -55,6 +67,8 @@ export type {
   DialogFooterProps,
   DialogHeaderElement,
   DialogHeaderProps,
+  DialogImageElement,
+  DialogImageProps,
   DialogOverlayElement,
   DialogOverlayProps,
   DialogPortalProps,
