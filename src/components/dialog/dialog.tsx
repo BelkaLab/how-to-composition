@@ -1,10 +1,22 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog';
+import { Slot } from '@radix-ui/react-slot';
 import { forwardRef } from 'react';
 
 import { cn } from '@/lib/cn';
 
-import { Slot } from '@radix-ui/react-slot';
+import {
+  dialogBodyStyles,
+  dialogContentStyles,
+  dialogDescriptionStyles,
+  dialogFooterStyles,
+  dialogHeaderStyles,
+  dialogImageStyles,
+  dialogOverlayStyles,
+  dialogTitleStyles,
+} from './styles';
 import type {
+  DialogBodyElement,
+  DialogBodyProps,
   DialogContentElement,
   DialogContentProps,
   DialogDescriptionElement,
@@ -13,6 +25,8 @@ import type {
   DialogFooterProps,
   DialogHeaderElement,
   DialogHeaderProps,
+  DialogImageElement,
+  DialogImageProps,
   DialogOverlayElement,
   DialogOverlayProps,
   DialogPortalProps,
@@ -42,7 +56,7 @@ const DialogOverlay = forwardRef<DialogOverlayElement, DialogOverlayProps>(
   ({ className, ...props }, ref) => (
     <DialogPrimitive.Overlay
       {...props}
-      className={cn('fixed inset-0 z-50 bg-black opacity-50', className)}
+      className={cn(dialogOverlayStyles(), className)}
       ref={ref}
     />
   ),
@@ -56,10 +70,7 @@ const DialogContent = forwardRef<DialogContentElement, DialogContentProps>(
 
       <DialogPrimitive.Content
         {...props}
-        className={cn(
-          'fixed left-1/2 top-1/2 z-50 w-full max-w-lg -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-stone-100',
-          className,
-        )}
+        className={cn(dialogContentStyles(), className)}
         ref={ref}
       />
     </DialogPortal>
@@ -81,7 +92,7 @@ const DialogHeader = forwardRef<DialogHeaderElement, DialogHeaderProps>(
     return (
       <Component
         {...props}
-        className={cn('flex flex-col gap-2 rounded-t-[inherit] p-4', className)}
+        className={cn(dialogHeaderStyles(), className)}
         ref={ref}
       />
     );
@@ -89,11 +100,26 @@ const DialogHeader = forwardRef<DialogHeaderElement, DialogHeaderProps>(
 );
 DialogHeader.displayName = 'DialogHeader';
 
+const DialogImage = forwardRef<DialogImageElement, DialogImageProps>(
+  ({ asChild, className, ...props }, ref) => {
+    const Component = asChild ? Slot : 'img';
+
+    return (
+      <Component
+        {...props}
+        className={cn(dialogImageStyles(), className)}
+        ref={ref}
+      />
+    );
+  },
+);
+DialogImage.displayName = 'DialogImage';
+
 const DialogTitle = forwardRef<DialogTitleElement, DialogTitleProps>(
   ({ className, ...props }, ref) => (
     <DialogPrimitive.Title
       {...props}
-      className={cn('text-lg font-bold text-zinc-900', className)}
+      className={cn(dialogTitleStyles(), className)}
       ref={ref}
     />
   ),
@@ -106,11 +132,26 @@ const DialogDescription = forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
     {...props}
-    className={cn('mb-1 text-base text-zinc-900', className)}
+    className={cn(dialogDescriptionStyles(), className)}
     ref={ref}
   />
 ));
 DialogDescription.displayName = 'DialogDescription';
+
+const DialogBody = forwardRef<DialogBodyElement, DialogBodyProps>(
+  ({ asChild, className, ...props }, ref) => {
+    const Component = asChild ? Slot : 'div';
+
+    return (
+      <Component
+        {...props}
+        className={cn(dialogBodyStyles(), className)}
+        ref={ref}
+      />
+    );
+  },
+);
+DialogBody.displayName = 'DialogBody';
 
 const DialogFooter = forwardRef<DialogFooterElement, DialogFooterProps>(
   ({ asChild, className, ...props }, ref) => {
@@ -119,10 +160,7 @@ const DialogFooter = forwardRef<DialogFooterElement, DialogFooterProps>(
     return (
       <Component
         {...props}
-        className={cn(
-          'flex flex-row justify-end gap-4 rounded-b-[inherit] p-4',
-          className,
-        )}
+        className={cn(dialogFooterStyles(), className)}
         ref={ref}
       />
     );
@@ -132,11 +170,13 @@ DialogFooter.displayName = 'DialogFooter';
 
 export {
   Dialog,
+  DialogBody,
   DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
+  DialogImage,
   DialogOverlay,
   DialogPortal,
   DialogTitle,

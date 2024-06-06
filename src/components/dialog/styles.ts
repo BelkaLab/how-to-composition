@@ -1,0 +1,44 @@
+import { cva } from 'cva';
+
+const dialogOverlayStyles = cva({
+  base: 'fixed inset-0 z-50 bg-black opacity-50',
+});
+
+const dialogContentStyles = cva({
+  base: 'fixed left-1/2 top-1/2 z-50 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-stone-100',
+});
+
+const dialogHeaderStyles = cva({
+  base: 'flex flex-col gap-2 rounded-t-[inherit] p-4',
+});
+
+const dialogImageStyles = cva({
+  base: 'max-h-64 w-full max-w-full rounded-lg object-cover',
+});
+
+const dialogTitleStyles = cva({
+  base: 'text-lg font-bold text-zinc-900',
+});
+
+const dialogDescriptionStyles = cva({
+  base: 'text-base text-zinc-900',
+});
+
+const dialogBodyStyles = cva({
+  base: 'flex flex-col gap-2 p-4',
+});
+
+const dialogFooterStyles = cva({
+  base: 'flex flex-row justify-end gap-2 rounded-b-[inherit] p-4',
+});
+
+export {
+  dialogBodyStyles,
+  dialogContentStyles,
+  dialogDescriptionStyles,
+  dialogFooterStyles,
+  dialogHeaderStyles,
+  dialogImageStyles,
+  dialogOverlayStyles,
+  dialogTitleStyles,
+};
