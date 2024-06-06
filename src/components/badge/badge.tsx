@@ -7,13 +7,13 @@ import { badgeStyles } from './styles';
 import type { BadgeElement, BadgeProps } from './types';
 
 const Badge = forwardRef<BadgeElement, BadgeProps>(
-  ({ asChild, className, ...props }, ref) => {
+  ({ asChild, className, size = 'md', ...props }, ref) => {
     const Component = asChild ? Slot : 'span';
 
     return (
       <Component
         {...props}
-        className={cn(badgeStyles(), className)}
+        className={cn(badgeStyles({ size }), className)}
         ref={ref}
       />
     );
