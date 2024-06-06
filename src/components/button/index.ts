@@ -1,3 +1,8 @@
-export { Button } from './button';
+export { Button, ButtonBadge } from './button';
 export { buttonStyles } from './styles';
-export type { ButtonElement, ButtonProps, ButtonSize } from './types';
+export type {
+  ButtonBadgeElement,
+  ButtonBadgeProps,
+  ButtonElement,
+  ButtonProps,
+} from './types';

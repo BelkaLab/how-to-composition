@@ -8,4 +8,4 @@ type BadgeProps = ComponentPropsWithoutRef<'span'> & {
   size?: BadgeSize;
 };
 
-export type { BadgeElement, BadgeProps, BadgeSize };
+export type { BadgeElement, BadgeProps };
