@@ -3,6 +3,7 @@ import { forwardRef } from 'react';
 
 import { cn } from '@/lib/cn';
 
+import { badgeStyles } from './styles';
 import type { BadgeElement, BadgeProps } from './types';
 
 const Badge = forwardRef<BadgeElement, BadgeProps>(
@@ -12,10 +13,7 @@ const Badge = forwardRef<BadgeElement, BadgeProps>(
     return (
       <Component
         {...props}
-        className={cn(
-          'inline-flex h-6 min-w-6 items-center justify-center gap-1 rounded-full bg-white px-2 py-0.5 text-sm font-semibold text-black transition-colors',
-          className,
-        )}
+        className={cn(badgeStyles(), className)}
         ref={ref}
       />
     );

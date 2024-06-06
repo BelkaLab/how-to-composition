@@ -3,19 +3,17 @@ import { forwardRef } from 'react';
 
 import { cn } from '@/lib/cn';
 
+import { buttonStyles } from './styles';
 import type { ButtonElement, ButtonProps } from './types';
 
 const Button = forwardRef<ButtonElement, ButtonProps>(
-  ({ asChild, className, type = 'button', ...props }, ref) => {
+  ({ asChild, className, size = 'md', type = 'button', ...props }, ref) => {
     const Component = asChild ? Slot : 'button';
 
     return (
       <Component
         {...props}
-        className={cn(
-          'inline-flex h-10 min-w-10 items-center justify-center gap-2 rounded-full bg-black px-3 py-2 text-base font-bold text-white transition-colors hover:bg-purple-800',
-          className,
-        )}
+        className={cn(buttonStyles({ size }), className)}
         type={type}
         ref={ref}
       />

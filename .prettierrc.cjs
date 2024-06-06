@@ -1,4 +1,5 @@
 module.exports = {
-  singleQuote: true,
   plugins: ['prettier-plugin-tailwindcss'],
+  singleQuote: true,
+  tailwindFunctions: ['clsx', 'cva', 'cx'],
 };
