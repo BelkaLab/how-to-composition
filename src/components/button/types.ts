@@ -1,5 +1,7 @@
 import type { ComponentPropsWithoutRef, ElementRef } from 'react';
 
+import { Badge } from '@/components/badge';
+
 type ButtonSize = 'sm' | 'md' | 'lg';
 type ButtonVariant = 'solid' | 'outline';
 
@@ -10,4 +12,12 @@ type ButtonProps = ComponentPropsWithoutRef<'button'> & {
   variant?: ButtonVariant;
 };
 
-export type { ButtonElement, ButtonProps };
+type ButtonBadgeElement = ElementRef<typeof Badge>;
+type ButtonBadgeProps = ComponentPropsWithoutRef<typeof Badge>;
+
+export type {
+  ButtonBadgeElement,
+  ButtonBadgeProps,
+  ButtonElement,
+  ButtonProps,
+};
