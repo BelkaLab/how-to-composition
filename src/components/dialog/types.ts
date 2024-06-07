@@ -49,9 +49,11 @@ type DialogBodyProps = ComponentPropsWithoutRef<'div'> & {
   asChild?: boolean;
 };
 
+type DialogFooterOrientation = 'horizontal' | 'vertical';
 type DialogFooterElement = ElementRef<'footer'>;
 type DialogFooterProps = ComponentPropsWithoutRef<'footer'> & {
   asChild?: boolean;
+  orientation?: DialogFooterOrientation;
 };
 
 export type {

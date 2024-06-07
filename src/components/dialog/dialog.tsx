@@ -154,13 +154,13 @@ const DialogBody = forwardRef<DialogBodyElement, DialogBodyProps>(
 DialogBody.displayName = 'DialogBody';
 
 const DialogFooter = forwardRef<DialogFooterElement, DialogFooterProps>(
-  ({ asChild, className, ...props }, ref) => {
+  ({ asChild, className, orientation = 'horizontal', ...props }, ref) => {
     const Component = asChild ? Slot : 'footer';
 
     return (
       <Component
         {...props}
-        className={cn(dialogFooterStyles(), className)}
+        className={cn(dialogFooterStyles({ orientation }), className)}
         ref={ref}
       />
     );

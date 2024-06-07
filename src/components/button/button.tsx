@@ -19,6 +19,7 @@ const Button = forwardRef<ButtonElement, ButtonProps>(
   (
     {
       asChild,
+      children,
       className,
       size = 'md',
       type = 'button',
@@ -36,7 +37,9 @@ const Button = forwardRef<ButtonElement, ButtonProps>(
           className={cn(buttonStyles({ size, variant }), className)}
           type={type}
           ref={ref}
-        />
+        >
+          {children}
+        </Component>
       </ButtonContext.Provider>
     );
   },

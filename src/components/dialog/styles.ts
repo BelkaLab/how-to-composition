@@ -29,7 +29,16 @@ const dialogBodyStyles = cva({
 });
 
 const dialogFooterStyles = cva({
-  base: 'flex flex-row justify-end gap-2 rounded-b-[inherit] p-4',
+  base: 'flex justify-end gap-2 rounded-b-[inherit] p-4',
+  variants: {
+    orientation: {
+      horizontal: 'flex-row',
+      vertical: 'flex-col',
+    },
+  },
+  defaultVariants: {
+    orientation: 'horizontal',
+  },
 });
 
 export {

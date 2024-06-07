@@ -1,7 +1,7 @@
 import { cva } from 'cva';
 
 const inputStyles = cva({
-  base: 'flex border-x-0 border-b border-t-0 border-black bg-transparent px-0 transition-colors focus-visible:border-black focus-visible:outline-0 focus-visible:ring-0 disabled:cursor-not-allowed disabled:opacity-50',
+  base: 'flex w-full border-x-0 border-b border-t-0 border-black bg-transparent px-0 transition-colors focus-visible:border-black focus-visible:outline-0 focus-visible:ring-0 disabled:cursor-not-allowed disabled:opacity-50',
   variants: {
     size: {
       sm: 'h-8 py-1.5 text-sm',

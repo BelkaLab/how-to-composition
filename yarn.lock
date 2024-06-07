@@ -2084,6 +2084,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/react-label@npm:2.0.2":
+  version: 2.0.2
+  resolution: "@radix-ui/react-label@npm:2.0.2"
+  dependencies:
+    "@babel/runtime": "npm:^7.13.10"
+    "@radix-ui/react-primitive": "npm:1.0.3"
+  peerDependencies:
+    "@types/react": "*"
+    "@types/react-dom": "*"
+    react: ^16.8 || ^17.0 || ^18.0
+    react-dom: ^16.8 || ^17.0 || ^18.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    "@types/react-dom":
+      optional: true
+  checksum: 10c0/a6528735b9f3e15ad83b7a905861bbc5a9b9236716957d6e99902bbfced0472aed4ddbf519bc0e6c41f528986e7acf7270cf0734a2fc380a547a8640809d3a81
+  languageName: node
+  linkType: hard
+
 "@radix-ui/react-portal@npm:1.0.4":
   version: 1.0.4
   resolution: "@radix-ui/react-portal@npm:1.0.4"
@@ -6470,6 +6490,7 @@ __metadata:
     "@radix-ui/react-accessible-icon": "npm:1.0.3"
     "@radix-ui/react-context": "npm:1.0.1"
     "@radix-ui/react-dialog": "npm:1.0.5"
+    "@radix-ui/react-label": "npm:2.0.2"
     "@radix-ui/react-slot": "npm:1.0.2"
     "@storybook/addon-essentials": "npm:8.1.6"
     "@storybook/addon-interactions": "npm:8.1.6"

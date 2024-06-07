@@ -1,7 +1,9 @@
-import { InformationCircleIcon } from '@heroicons/react/24/outline';
+import { PlusCircleIcon } from '@heroicons/react/24/outline';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button, ButtonBadge } from './button';
+import { Badge } from '@/components/badge';
+
+import { Button } from './button';
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
@@ -36,51 +38,53 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
-  render: (args) => <Button {...args} />,
+  render: ({ children, ...args }) => <Button {...args}>{children}</Button>,
 };
 
-export const LeftIcon: Story = {
+export const WithLeftIcon: Story = {
   render: ({ children, ...args }) => (
     <Button {...args}>
-      <InformationCircleIcon />
+      <PlusCircleIcon />
       {children}
     </Button>
   ),
 };
 
-export const RightIcon: Story = {
+export const WithRightIcon: Story = {
   render: ({ children, ...args }) => (
     <Button {...args}>
       {children}
-      <InformationCircleIcon />
+      <PlusCircleIcon />
     </Button>
   ),
 };
 
-export const TwoIcons: Story = {
+export const WithTwoIcons: Story = {
   render: ({ children, ...args }) => (
     <Button {...args}>
-      <InformationCircleIcon />
+      <PlusCircleIcon />
       {children}
-      <InformationCircleIcon />
+      <PlusCircleIcon />
     </Button>
   ),
 };
 
-export const LeftBadge: Story = {
+export const WithBadge: Story = {
   render: ({ children, ...args }) => (
     <Button {...args}>
-      <ButtonBadge>123</ButtonBadge>
       {children}
+      <Badge>123</Badge>
     </Button>
   ),
 };
 
-export const RightBadge: Story = {
+export const WithTwoAndBadgeIcons: Story = {
   render: ({ children, ...args }) => (
     <Button {...args}>
+      <PlusCircleIcon />
       {children}
-      <ButtonBadge>123</ButtonBadge>
+      <Badge>123</Badge>
+      <PlusCircleIcon />
     </Button>
   ),
 };
