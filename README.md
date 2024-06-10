@@ -45,9 +45,9 @@ Click the link above to open the recorded webinar and learn how to apply composi
 
 In the webinar, we focus on applying the composition pattern with the following components:
 
-- **Button**
+- **Button** - `src/components/button/button.tsx`
 
-- **Dialog**
+- **Dialog** - `src/components/dialog/dialog.tsx`
 
 These components are inspired by the ones we’ve crafted and used in our projects at Belka.
 
