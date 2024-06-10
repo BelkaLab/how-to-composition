@@ -41,7 +41,15 @@ To get started with the project, follow these steps:
 
 ## How to apply composition pattern
 
-Click the link above to open the recorded webinar and learn how to apply composition pattern. The practical exercise starts at minute 16:50.
+Click the link above to open the recorded webinar and learn how to apply composition pattern. The practical exercise starts at **minute 16:50**.
+
+In the webinar, we focus on applying the composition pattern with the following components:
+
+- **Button**
+
+- **Dialog**
+
+These components are inspired by the ones we’ve crafted and used in our projects at Belka.
 
 ## Additional resources
 
