@@ -1,5 +1,6 @@
+import { createContext } from '@radix-ui/react-context';
 import { Slot } from '@radix-ui/react-slot';
-import { createContext, forwardRef, useContext } from 'react';
+import { forwardRef } from 'react';
 
 import { Badge } from '@/components/badge';
 import { cn } from '@/lib/cn';
@@ -12,8 +13,8 @@ import {
   type ButtonProps,
 } from './types';
 
-const ButtonContext = createContext<Pick<ButtonProps, 'size'>>({});
-const useButtonContext = () => useContext(ButtonContext);
+const [ButtonProvider, useButtonContext] =
+  createContext<Pick<ButtonProps, 'size'>>('Button');
 
 const Button = forwardRef<ButtonElement, ButtonProps>(
   (
@@ -31,26 +32,27 @@ const Button = forwardRef<ButtonElement, ButtonProps>(
     const Component = asChild ? Slot : 'button';
 
     return (
-      <ButtonContext.Provider value={{ size }}>
+      <ButtonProvider size={size}>
         <Component
           {...props}
           className={cn(buttonStyles({ size, variant }), className)}
-          type={type}
           ref={ref}
+          type={type}
         >
           {children}
         </Component>
-      </ButtonContext.Provider>
+      </ButtonProvider>
     );
   },
 );
 Button.displayName = 'Button';
 
 const ButtonBadge = forwardRef<ButtonBadgeElement, ButtonBadgeProps>(
-  (props, ref) => {
-    const button = useButtonContext();
+  ({ size: sizeProp, ...props }, ref) => {
+    const { size: sizeContext } = useButtonContext('ButtonBadge');
+    const size = sizeProp ?? sizeContext;
 
-    return <Badge size={button.size} {...props} ref={ref} />;
+    return <Badge {...props} size={size} ref={ref} />;
   },
 );
 ButtonBadge.displayName = 'ButtonBadge';

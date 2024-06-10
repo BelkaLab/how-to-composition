@@ -1,34 +1,51 @@
+![Belka logo](belka.png 'Belka')
+
 # How to composition
 
-Learn how to apply composition principles in your work with React
+👋 Hey! If you are here it means you would like to learn how to apply composition pattern in React. You are at the right place!
 
-# React + TypeScript + Vite
+We also recorded a webinar. Benjamin Minarski, Belka’s front-end engineer, will show you how we applied this pattern in our projects.\
+👉 Here you can watch it: https://youtu.be/l2YEMW-FBy8?t=1010
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project setup
 
-Currently, two official plugins are available:
+To get started with the project, follow these steps:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Clone the repository:**
 
-## Expanding the ESLint configuration
+   **SSH**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+   ```bash
+   git clone git@github.com:BelkaLab/how-to-composition.git
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+   _or_
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-};
-```
+   **HTTPS**
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+   ```bash
+   git clone https://github.com/BelkaLab/how-to-composition.git
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   yarn
+   ```
+
+3. **Start Storybook:**
+
+   ```bash
+   yarn storybook
+   ```
+
+## How to apply composition pattern
+
+Click the link above to open the recorded webinar and learn how to apply composition pattern. The practical exercise starts at minute 16:50.
+
+## Additional resources
+
+- [CVA](https://cva.style/docs)
+- [Radix Primitives](https://www.radix-ui.com/primitives/docs)
+- [Storybook](https://storybook.js.org/docs)
+- [Tailwind](https://tailwindcss.com/docs)
