@@ -2,7 +2,7 @@
 
 # How to composition
 
-👋 Hey! If you are here it means you would like to learn how to apply composition pattern in React. You are at the right place!
+👋 Hey! If you are here it means you would like to learn how to apply the composition pattern in React. You are at the right place!
 
 We also recorded a webinar. Benjamin Minarski, Belka’s front-end engineer, will show you how we applied this pattern in our projects.\
 👉 Here you can watch it: https://youtu.be/l2YEMW-FBy8?t=1010
